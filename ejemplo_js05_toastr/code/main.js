@@ -47,15 +47,6 @@ function ValidarElementos() {
     var apellido = $("#input_apellido").val().trim();
     var esValido = nombre.length > 0 && apellido.length > 0;
     
-    /*nombre.length > 0 
-        ? $('#val_input_nombre').addClass('hide')
-        : $('#val_input_nombre').removeClass('hide');
-        
-    apellido.length > 0 
-        ? $('#val_input_apellido').addClass('hide')
-        : $('#val_input_apellido').removeClass('hide');
-    */
-    
     toastr.remove()
     
     if (nombre.length === 0) {
@@ -65,6 +56,14 @@ function ValidarElementos() {
     if (apellido.length === 0) {
         toastr.warning('El campo Apellido es requerido.')
     }
+    
+    nombre.length > 0 
+        ? $('#val_input_nombre').addClass('hide')
+        : $('#val_input_nombre').removeClass('hide');
+        
+    apellido.length > 0 
+        ? $('#val_input_apellido').addClass('hide')
+        : $('#val_input_apellido').removeClass('hide');
     
     return esValido;
 }
