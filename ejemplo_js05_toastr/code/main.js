@@ -36,7 +36,7 @@ $(document).ready(function() {
         var nombre2 = selector.find(".class_nombre").html();
         var apellido2 = selector.find(".class_apellido").html();
         var edad2 = selector.find(".class_edad").html();
-        
+        var edaddelavidu = "";
         alert(nombre2 + " " + apellido2 + " " + edad2);
     });
 
