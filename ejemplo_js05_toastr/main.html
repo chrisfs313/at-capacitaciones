@@ -1,23 +1,19 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        
+        <title>Ejemplo de CSS en archivo distinto</title>
         <link rel="stylesheet" type="text/css" href="main.css">
+        <script src="libs/jquery-3.3.1.min.js"></script>
+        <script src="code/persona.js"></script>
         <script src="code/main.js"></script>
         
-        <!-- MOVI HARTOOOO -->
-        
-        <title>Ejemplo de CSS en archivo distinto</title>
+        <!-- TOASTR -->
+        <link rel="stylesheet" type="text/css" href="libs/toastr.min.css">
+        <script src="libs/toastr.min.js"></script>
     </head>
     
-<!-- Comentario WAQV -->    
-    //Prueba de modificación<body>
+    <body>
         <h1>Esta es un ejemplo03</h1>
-        
-        <button id="btnComida">Comida</button>
-        
-        Edad <input id="input_edad" type="text"/> 
-        </br>
         
         Nombre(*) <input id="input_nombre" type="text"/> 
         <span id="val_input_nombre" class="hide">Dato requerido</span>
@@ -27,9 +23,10 @@
         <span id="val_input_apellido" class="hide">Dato requerido</span>
         </br>
         
-         <!-- MOVI HARTOOOO  2222-->
+        Edad <input id="input_edad" type="text"/> 
+        </br>
 
-        
+        <button id="btnComida">Comida</button>
         
         <div>
             <table id="table_personas">
@@ -39,14 +36,8 @@
                     <th>Edad</th>
                     <th>Info</th>
                     <th>Eliminar</th>
-                    
-                    
                 </tr>
             </table>
         </div>
-        
-        
-         <!-- MOVI HARTOOOO 333 -->
     </body>
-    
 </html>
