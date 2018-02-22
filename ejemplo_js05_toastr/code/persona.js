@@ -13,6 +13,6 @@ function Persona() {
     this.Initialize = function() {
         nombre = "Ash";
         apellido = "Ketchup";
-        edad = "15";
+        edad = "19";
     }
 }
