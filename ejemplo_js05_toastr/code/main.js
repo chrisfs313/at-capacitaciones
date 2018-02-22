@@ -2,10 +2,13 @@ $(document).ready(function() {
     var boton = $("#btnComida");
     boton.on('click', function() {
         
-        if (ValidarElementos()) {
-            var nombre = $("#input_nombre").val();
-            var apellido = $("#input_apellido").val();
-            var edad = $("#input_edad").val();
+        $.get("https://at-capacitaciones-ws-chrisfs313.c9users.io/services/listEntries", function(data) {
+            
+            var data1=JSON.parse(data)
+            
+            var nombre = data1.nombre;
+            var apellido = data1.apellido;
+            var edad    = data1.edad;
             
             var html = "";
             html += "<tr>";
@@ -24,6 +27,18 @@ $(document).ready(function() {
             html += "</tr>";
             
             $("#table_personas").append(html);
+            
+        }).fail(function(msg, url, line) {
+            console.log(msg);
+          alert("An error has occurred"+msg);
+        });
+        
+        if (true) {
+           // var nombre = $("#input_nombre").val();
+            //var apellido = $("#input_apellido").val();
+            //var edad = $("#input_edad").val();
+            
+            
         }
     });
     
