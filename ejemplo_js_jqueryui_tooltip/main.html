@@ -12,6 +12,20 @@
       <script>
       $( function() {
         $( document ).tooltip();
+        
+        $('#loader').css('display', 'none');
+        
+        setTimeout(function() {
+            $('#loader').css('display', 'block');
+        }, 2000);
+        
+        setTimeout(function() {
+            $('#labelCustom').attr('title', 'Este vino del servidro');
+            $('#loader').css('display', 'none');
+        }, 5000);
+        
+        
+        
       } );
       </script>
       
@@ -23,6 +37,16 @@
       </style>
     </head>
     <body>
+        <div id="loader" style="background-color:#00000099;z-index:9999;position:absolute;width:100%;height:100%">
+            <div style="font-size: 120px;
+    text-align: center;
+    color: chartreuse;
+    margin-top: 180px;">
+                Cargando...
+            </div>
+        </div>
+        
+        
         <p>
             <a href="#" title="That&apos;s what this widget is">Tooltips</a> 
             can be attached to any element. When you hover
@@ -37,7 +61,7 @@
             Tooltips are also useful for form elements, to show some additional information in the context of each field.
         </p>
         <p>
-            <label for="age" title="Aloha esta es mi prueba">Your age:</label>
+            <label id="labelCustom" for="age" title="Aloha esta es mi prueba">Your age:</label>
             <input id="age" title="We ask for your age only for statistical purposes.">
         </p>
         <p>
