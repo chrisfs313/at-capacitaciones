@@ -1,6 +1,10 @@
 <!DOCTYPE HTML>
 <html>
     <head>
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
         <title>Ejemplo de CSS en archivo distinto</title>
         <link rel="stylesheet" type="text/css" href="main.css">
         <script src="libs/jquery-3.3.1.min.js"></script>
@@ -10,13 +14,15 @@
         <!-- TOASTR -->
         <link rel="stylesheet" type="text/css" href="libs/toastr.min.css">
         <script src="libs/toastr.min.js"></script>
-        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.js" >
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
         <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     </head>
     
     <body>
-        
         <div class="container">
+        
             <h1>Esta es un ejemplo03</h1>
             
             <div class="row">
@@ -24,16 +30,21 @@
                     Nombre(*) <input id="input_nombre" type="text"/> 
                     <span id="val_input_nombre" class="hide">Dato requerido</span>
                 </div>
+                
                 <div class="col-sm-4">
                     Apellido(*) <input id="input_apellido" type="text"/> 
                     <span id="val_input_apellido" class="hide">Dato requerido</span>
                 </div>
-               <div class="col-sm-4">
-                  Edad <input id="input_edad" type="text"/> 
+                
+                <div class="col-sm-4">
+                    Edad <input id="input_edad" type="text"/> 
                 </div>
             </div>
-             
-            <button id="btnComida">Comida</button>
+    
+            <div class="row">
+                <button id="btnComida">Comida</button>
+                <button id="btnServicio">Servicio web: GET</button>
+            </div>
             
             <div>
                 <table id="table_personas">
@@ -46,6 +57,7 @@
                     </tr>
                 </table>
             </div>
+        
         </div>
     </body>
 </html>

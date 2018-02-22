@@ -1,22 +1,47 @@
 $(document).ready(function() {
-    $.get("https://at-capacitaciones-ws-chrisfs313.c9users.io/services/listEntries",function(data, status){
-       if(status=="success") {
-           alert(data);
-       }else{
-           alert("No hay información para mostrar. Status: "+status);
-       }
+    var btn_ws_get = $('#btnServicio');
+    btn_ws_get.on('click', function() {
+        
+        var wsUrl = "https://at-capacitaciones-ws-chrisfs313.c9users.io/services/listEntries";
+
+        var jqxhr = $.get(wsUrl, function(data) {
+            var parametros = JSON.parse(data);
+            
+            
+            var html = "";
+            html += "<tr>";
+            html += "    <td class='class_nombre'>" + parametros.nombre + "</td>";
+            html += "    <td class='class_apellido'>" + parametros.apellido + "</td>";
+            html += "    <td class='class_edad'>" + parametros.edad + "</td>";
+            
+            html += "    <td>";
+            html += "       <button class='btnInfo'>Info</button> ";
+            html += "    </td>";
+            
+            html += "    <td>";
+            html += "       <button class='btnEliminar'>Eliminar</button> ";
+            html += "    </td>";
+            
+            html += "</tr>";
+            
+            $("#table_personas").append(html);
+        })
+        .fail(function(error, data) {
+            //alert("Consultar al departamento TI sobre el servicio.");
+            //console.log("error", error);
+            
+            window.location.href = "no_services.html";
+        })
+        
     });
     
     var boton = $("#btnComida");
     boton.on('click', function() {
         
-        $.get("https://at-capacitaciones-ws-chrisfs313.c9users.io/services/listEntries", function(data) {
-            
-            var data1=JSON.parse(data)
-            
-            var nombre = data1.nombre;
-            var apellido = data1.apellido;
-            var edad    = data1.edad;
+        if (ValidarElementos()) {
+            var nombre = $("#input_nombre").val();
+            var apellido = $("#input_apellido").val();
+            var edad = $("#input_edad").val();
             
             var html = "";
             html += "<tr>";
@@ -35,18 +60,6 @@ $(document).ready(function() {
             html += "</tr>";
             
             $("#table_personas").append(html);
-            
-        }).fail(function(msg, url, line) {
-            console.log(msg);
-          alert("An error has occurred"+msg);
-        });
-        
-        if (true) {
-           // var nombre = $("#input_nombre").val();
-            //var apellido = $("#input_apellido").val();
-            //var edad = $("#input_edad").val();
-            
-            
         }
     });
     
