@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    $.get("https://at-capacitaciones-ws-chrisfs313.c9users.io/services/listEntries",function(data, status){
+       if(status=="success") {
+           alert(data);
+       }else{
+           alert("No hay información para mostrar. Status: "+status);
+       }
+    });
+    
     var boton = $("#btnComida");
     boton.on('click', function() {
         
