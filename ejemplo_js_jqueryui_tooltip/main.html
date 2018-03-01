@@ -11,6 +11,7 @@
       
       <script>
       $( function() {
+          
         $( document ).tooltip();
         
         $('#loader').css('display', 'none');
@@ -25,9 +26,37 @@
         }, 5000);
         
         
+        var objeto = {};
+        objeto.primero = 0;
+        objeto.segundo = 1;
+        objeto.tercero = 2;
+        
+        for (var property in objeto) {
+            if (objeto.hasOwnProperty(property)) {
+                // do stuff
+                console.log("property", property, 
+                    objeto[property]);
+            }
+        }
+        
+        function Empresa(nombre, ruc) {
+            var m_nombre = nombre;
+            var m_ruc = ruc === undefined ? 9999 : ruc;
+        }
+        
+        var emp1 = new Empresa("Yanbal", 1212321);
+        var emp2 = new Empresa("Yanbal");
+        
+        console.log("otra forma", objeto["primero"]);
+        
+        
+        var miAutoEsRojo = true; // CamelCase
+        var MiAutoEsRojo = true; // PascalCase
+        
         
       } );
       </script>
+     
       
       <style>
       label {
